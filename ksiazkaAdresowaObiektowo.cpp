@@ -3,13 +3,18 @@
 
 #include <iostream>
 #include "KsiazkaAdresowa.h"
+#include <windows.h>
 
 using namespace std;
 
 
 int main()
 {
-    Uzytkownik u1;
+    KsiazkaAdresowa ksiazkaAdresowa;
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 }
 
  
