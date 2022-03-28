@@ -2,9 +2,19 @@
 //
 
 #include <iostream>
+#include "KsiazkaAdresowa.h"
+#include <windows.h>
+
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    KsiazkaAdresowa ksiazkaAdresowa;
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 }
 
+ 
