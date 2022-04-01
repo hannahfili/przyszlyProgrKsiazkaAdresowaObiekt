@@ -6,15 +6,11 @@
 #include <sstream>
 #include <iostream>
 #include "Uzytkownik.h"
-#include "UzytkownikManager.h"
 
 using namespace std;
-
-class KsiazkaAdresowa
+class MetodyPomocnicze
 {
-	UzytkownikManager uzytkownikManager;
 public:
-	void rejestracjaUzytkownika();
-	void wypiszWszystkichUzytkownikow();
+	static string konwerjsaIntNaString(int liczba);
 };
 
