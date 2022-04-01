@@ -4,7 +4,7 @@
 #include <iostream>
 
 KsiazkaAdresowa::KsiazkaAdresowa() {
-    string nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
+    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
 }
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -65,7 +65,7 @@ void KsiazkaAdresowa::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
-
+    cout << nazwaPlikuZUzytkownikami << "!!!!!!!!!!!" << endl;
     if (plikTekstowy.good() == true)
     {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
