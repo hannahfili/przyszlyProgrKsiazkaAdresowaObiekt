@@ -1,8 +1,11 @@
 #include "UzytkownikManager.h"
+void UzytkownikManager::wczytajUzytkownikowZPliku() {
+    uzytkownicy=plik.wczytajUzytkownikowZPliku();
+}
 void UzytkownikManager::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
-    Uzytkownicy.push_back(uzytkownik);
+    uzytkownicy.push_back(uzytkownik);
     plik.dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
@@ -31,15 +34,15 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
 }
 int UzytkownikManager::pobierzIdNowegoUzytkownika()
 {
-    if (Uzytkownicy.empty() == true)
+    if (uzytkownicy.empty() == true)
         return 1;
     else
-        return Uzytkownicy.back().pobierzId() + 1;
+        return uzytkownicy.back().pobierzId() + 1;
 }
 bool UzytkownikManager::czyIstniejeLogin(string login)
 {
-    for (int i = 0; i < Uzytkownicy.size(); i++) {
-        if (Uzytkownicy[i].pobierzLogin() == login) {
+    for (int i = 0; i < uzytkownicy.size(); i++) {
+        if (uzytkownicy[i].pobierzLogin() == login) {
             cout << "Istnieje uzytkownik o takim loginie";
             return true;
         }
@@ -47,10 +50,10 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
     return false;
 }
 void UzytkownikManager::wypiszWszystkichUzytkownikow() {
-    for (int i = 0; i < Uzytkownicy.size(); i++) {
-        cout << Uzytkownicy[i].pobierzId() << endl;
-        cout << Uzytkownicy[i].pobierzLogin() << endl;
-        cout << Uzytkownicy[i].pobierzHaslo() << endl;
+    for (int i = 0; i < uzytkownicy.size(); i++) {
+        cout << uzytkownicy[i].pobierzId() << endl;
+        cout << uzytkownicy[i].pobierzLogin() << endl;
+        cout << uzytkownicy[i].pobierzHaslo() << endl;
 
     }
 }
