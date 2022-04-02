@@ -10,13 +10,10 @@ using namespace std;
 
 int main()
 {
-    string nazwa = "Uzytkownicy6.txt";
-    KsiazkaAdresowa ksiazkaAdresowa(nazwa);
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    string nazwaUzytkownicy = "Uzytkownicy6.txt";
+    string nazwaAdresy = "Uzytkownicy6.txt";
+    KsiazkaAdresowa ksiazkaAdresowa(nazwaUzytkownicy, nazwaAdresy);
+    ksiazkaAdresowa.menuGlowne();
 }
 
  

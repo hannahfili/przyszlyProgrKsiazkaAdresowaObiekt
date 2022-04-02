@@ -1,0 +1,3 @@
+1|iza|iza|
+2|andrzej|andrzej|
+3|ula|ula|
