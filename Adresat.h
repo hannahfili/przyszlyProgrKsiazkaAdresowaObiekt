@@ -13,9 +13,16 @@ class Adresat
     string email = "";
     string adres = "";
 public:
-    /*int pobierzIdAdresata() { return id; }
+    int pobierzIdAdresata() { return id; }
+    int pobierzIdUzytkownika() { return idUzytkownika; }
     string pobierzImie() { return imie; }
-    string pobierzNazwisko() { return nazwisko; }*/
+    string pobierzNazwisko() { return nazwisko; }
+    string pobierzNrTel() { return numerTelefonu; }
+    string pobierzEmail() { return email; }
+    string pobierzAdres() { return adres; }
+
+
+
     void ustawId(int noweId) { if (noweId > 0) id = noweId; }
     void ustawIdUzytkownika(int noweId) { if (noweId > 0) idUzytkownika = noweId; }
     void ustawImie(string noweImie) { imie = noweImie; }
