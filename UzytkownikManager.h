@@ -13,7 +13,7 @@ using namespace std;
 class UzytkownikManager
 {
 	int idZalogowanegoUzytkownika;
-	vector<Uzytkownik> Uzytkownicy;
+	vector<Uzytkownik> uzytkownicy;
 	PlikZuzytkownikami plik;
 
 	int pobierzIdNowegoUzytkownika();bool czyIstniejeLogin(string login);
@@ -26,6 +26,7 @@ public:
 	int logowanieUzytkownika();
 	
 	void wypiszWszystkichUzytkownikow();
+	void wczytajUzytkownikowZPliku();
 
 };
 
