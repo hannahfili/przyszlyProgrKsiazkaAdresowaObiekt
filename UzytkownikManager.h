@@ -27,6 +27,7 @@ public:
 	
 	void wypiszWszystkichUzytkownikow();
 	void wczytajUzytkownikowZPliku();
+	UzytkownikManager(string nazwa) : plik(nazwa) {};
 
 };
 

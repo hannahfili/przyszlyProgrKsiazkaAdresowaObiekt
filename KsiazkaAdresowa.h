@@ -16,6 +16,8 @@ class KsiazkaAdresowa
 public:
 	void rejestracjaUzytkownika();
 	void wypiszWszystkichUzytkownikow();
-	KsiazkaAdresowa();
+	KsiazkaAdresowa(string nazwaPliku) :uzytkownikManager(nazwaPliku) {
+		uzytkownikManager.wczytajUzytkownikowZPliku();
+};
 };
 
