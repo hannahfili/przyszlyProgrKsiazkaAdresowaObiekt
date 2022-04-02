@@ -17,6 +17,9 @@ void KsiazkaAdresowa::logowanieUzytkownika() {
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
     idOstatniegoAdresata = adresaciManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
+void KsiazkaAdresowa::dodajAdresata() {
+    idOstatniegoAdresata = adresaciManager.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+}
 void KsiazkaAdresowa::menuGlowne(){
     char wybor;
     while (true)
@@ -45,39 +48,39 @@ void KsiazkaAdresowa::menuGlowne(){
         else
         {
             wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-            /*
+            
 
-            wybor = wybierzOpcjeZMenuUzytkownika();
+            wybor = Menu::wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                dodajAdresata();
                 break;
-            case '2':
+            /*case '2':
                 wyszukajAdresatowPoImieniu(adresaci);
                 break;
             case '3':
                 wyszukajAdresatowPoNazwisku(adresaci);
-                break;
+                break;*/
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+                //wyswietlWszystkichAdresatow(adresaci);
                 break;
-            case '5':
+            /*case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
                 edytujAdresata(adresaci);
-                break;
+                break;*/
             case '7':
-                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
-                idZalogowanegoUzytkownika = 0;
-                adresaci.clear();
+                //idZalogowanegoUzytkownika = 0;
+                //adresaci.clear();
                 break;
-            }*/
+            }
         }
     }
 }

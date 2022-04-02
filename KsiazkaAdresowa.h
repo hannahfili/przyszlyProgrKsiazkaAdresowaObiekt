@@ -20,6 +20,7 @@ class KsiazkaAdresowa
 public:
 	void rejestracjaUzytkownika();
 	void logowanieUzytkownika();
+	void dodajAdresata();
 	void wypiszWszystkichUzytkownikow();
 	void menuGlowne();
 	void wczytajAdresatowZalogowanegoUzytkownikaZPliku();

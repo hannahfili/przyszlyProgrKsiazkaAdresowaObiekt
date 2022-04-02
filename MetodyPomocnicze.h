@@ -7,13 +7,14 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 class MetodyPomocnicze
 {
 public:
-	static string konwerjsaIntNaString(int liczba);
+	static string konwersjaIntNaString(int liczba);
 	static char wczytajZnak();
 	static string wczytajLinie();
 	static int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -21,5 +22,8 @@ public:
 	static string pobierzLiczbe(string tekst, int pozycjaZnaku);
 	static Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
 	static int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+	static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+	static string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+	static bool czyPlikJestPusty(fstream& plikTekstowy);
 };
 

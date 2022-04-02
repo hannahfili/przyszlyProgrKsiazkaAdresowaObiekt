@@ -10,8 +10,8 @@ using namespace std;
 
 int main()
 {
-    string nazwaUzytkownicy = "Uzytkownicy6.txt";
-    string nazwaAdresy = "Uzytkownicy6.txt";
+    string nazwaUzytkownicy = "Uzytkownicy.txt";
+    string nazwaAdresy = "Adresaci.txt";
     KsiazkaAdresowa ksiazkaAdresowa(nazwaUzytkownicy, nazwaAdresy);
     ksiazkaAdresowa.menuGlowne();
 }

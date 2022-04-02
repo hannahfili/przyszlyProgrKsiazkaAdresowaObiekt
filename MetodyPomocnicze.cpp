@@ -1,17 +1,41 @@
 #include "MetodyPomocnicze.h"
 #include "Adresat.h"
+
+bool MetodyPomocnicze::czyPlikJestPusty(fstream& plikTekstowy) {
+
+    plikTekstowy.seekg(0, ios::end);
+    if (plikTekstowy.tellg() == 0)
+        return true;
+    else
+        return false;
+}
+
 int MetodyPomocnicze::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
 {
     int pozycjaRozpoczeciaIdAdresata = 0;
     int idAdresata = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
-string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
+string MetodyPomocnicze::konwersjaIntNaString(int liczba)
 {
     ostringstream ss;
     ss << liczba;
     string str = ss.str();
     return str;
+}
+string MetodyPomocnicze::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
+{
+    string liniaZDanymiAdresata = "";
+
+    liniaZDanymiAdresata += konwersjaIntNaString(adresat.pobierzIdAdresata()) + '|';
+    liniaZDanymiAdresata += konwersjaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
+    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNrTel() + '|';
+    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
+    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
+
+    return liniaZDanymiAdresata;
 }
 string MetodyPomocnicze::wczytajLinie() {
     string wejscie = "";
@@ -104,4 +128,13 @@ Adresat MetodyPomocnicze::pobierzDaneAdresata(string daneAdresataOddzielonePiono
         }
     }
     return adresat;
+}
+string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+{
+    if (!tekst.empty())
+    {
+        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+        tekst[0] = toupper(tekst[0]);
+    }
+    return tekst;
 }
