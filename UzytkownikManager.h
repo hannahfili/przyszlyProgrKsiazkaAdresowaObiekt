@@ -15,8 +15,8 @@ class UzytkownikManager
 	vector<Uzytkownik> uzytkownicy;
 	PlikZuzytkownikami plik;
 
-	int pobierzIdNowegoUzytkownika();bool czyIstniejeLogin(string login);
-	bool czyIstniejeLogin();
+	int pobierzIdNowegoUzytkownika();
+	bool czyIstniejeLogin(string login);
 	Uzytkownik podajDaneNowegoUzytkownika();
 
 
