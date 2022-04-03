@@ -24,6 +24,9 @@ void KsiazkaAdresowa::dodajAdresata() {
 void KsiazkaAdresowa::pobierzIdOstatniegoAdresata() {
     idOstatniegoAdresata=adresaciManager.pobierzIdOstatniegoAdresata();
 }
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
+    uzytkownikManager.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+}
 void KsiazkaAdresowa::wyloguj() {
     idZalogowanegoUzytkownika = 0;
     adresaciManager.wyczyscWektor();
@@ -57,8 +60,6 @@ void KsiazkaAdresowa::menuGlowne(){
         {
             wczytajAdresatowZalogowanegoUzytkownikaZPliku();
             pobierzIdOstatniegoAdresata();
-            //cout << "id ostatniego adresata:" << idOstatniegoAdresata << endl;
-            system("pause");
             wybor = Menu::wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -83,7 +84,7 @@ void KsiazkaAdresowa::menuGlowne(){
                 edytujAdresata(adresaci);
                 break;*/
             case '7':
-                //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
                 wyloguj();

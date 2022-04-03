@@ -26,6 +26,7 @@ public:
 	void wyloguj();
 	void pobierzIdOstatniegoAdresata();
 	void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+	void zmianaHaslaZalogowanegoUzytkownika();
 	KsiazkaAdresowa(string nazwaPlikuUzytkownicy, string nazwaPlikuAdresaci) :
 		uzytkownikManager(nazwaPlikuUzytkownicy),
 		adresaciManager(nazwaPlikuAdresaci),
