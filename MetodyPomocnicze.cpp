@@ -14,6 +14,7 @@ int MetodyPomocnicze::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(stri
 {
     int pozycjaRozpoczeciaIdAdresata = 0;
     int idAdresata = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
+    cout << "ID ADRESATA: " << idAdresata << "###########";
     return idAdresata;
 }
 string MetodyPomocnicze::konwersjaIntNaString(int liczba)
@@ -78,10 +79,12 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
 string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
 {
     string liczba = "";
-    while (isdigit(tekst[pozycjaZnaku]) == true)
-    {
-        liczba += tekst[pozycjaZnaku];
-        pozycjaZnaku++;
+
+    for (int i = 0; i < tekst.length(); i++) {
+        if (isdigit(tekst[i]) == 1) {
+            liczba += tekst[i];
+        }
+        else break;
     }
     return liczba;
 }

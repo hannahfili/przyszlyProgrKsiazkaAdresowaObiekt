@@ -1,7 +1,7 @@
 #include "AdresaciManager.h"
 #include "MetodyPomocnicze.h"
-int AdresaciManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
-    return plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika, adresaci);
+void AdresaciManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);    
 }
 int AdresaciManager::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata) {
     Adresat adresat;
@@ -14,6 +14,9 @@ int AdresaciManager::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatnie
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     return ++idOstatniegoAdresata;
+}
+int AdresaciManager::pobierzIdOstatniegoAdresata() {
+    return plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
 Adresat AdresaciManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {

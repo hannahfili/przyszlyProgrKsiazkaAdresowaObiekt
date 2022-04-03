@@ -1,7 +1,8 @@
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
-int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika, vector<Adresat> &adresaci) {
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
     Adresat adresat;
+    vector<Adresat> adresaci;
     int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
@@ -24,14 +25,15 @@ int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogow
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
 
     plikTekstowy.close();
-
-    if (daneOstaniegoAdresataWPliku != "")
+    return adresaci;
+    //cout << "dane ostatniego adresata: " << daneOstaniegoAdresataWPliku << "&& &&&&&&" << endl;
+    /*if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = MetodyPomocnicze::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
         return idOstatniegoAdresata;
     }
     else
-        return 0;
+        return 0;*/
 }
 void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
@@ -58,4 +60,42 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     }
     plikTekstowy.close();
     system("pause");
+}
+int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
+    ifstream ifs;
+    char c;
+    int id;
+    string idStr = "";
+
+    ifs.open(nazwaPlikuZAdresatami);
+    if (!ifs) return 0;
+    if (ifs.peek() == ifstream::traits_type::eof()) return 0;
+
+    ifs.seekg(-1, ios::end);
+
+    int pos = ifs.tellg();
+
+    while (true) {
+        ifs.seekg(pos);
+        ifs.get(c);
+        if (pos == 0) {
+            while (true) {
+                ifs.seekg(pos);
+                ifs.get(c);
+                if (c == '|') {
+                    id = stoi(idStr); break;
+                }
+                idStr.push_back(c);
+                pos++;
+            }
+            break;
+        }
+        if (char(c) == '\n') {
+            ifs >> id;
+            break;
+        }
+        pos--;
+    }
+    ifs.close();
+    return id;
 }

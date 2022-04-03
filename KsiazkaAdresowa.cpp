@@ -15,10 +15,18 @@ void KsiazkaAdresowa::logowanieUzytkownika() {
     idZalogowanegoUzytkownika=uzytkownikManager.logowanieUzytkownika();
 }
 void KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
-    idOstatniegoAdresata = adresaciManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    adresaciManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 void KsiazkaAdresowa::dodajAdresata() {
     idOstatniegoAdresata = adresaciManager.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    //cout << "id ostatniego adresata:" << idOstatniegoAdresata << endl;
+}
+void KsiazkaAdresowa::pobierzIdOstatniegoAdresata() {
+    idOstatniegoAdresata=adresaciManager.pobierzIdOstatniegoAdresata();
+}
+void KsiazkaAdresowa::wyloguj() {
+    idZalogowanegoUzytkownika = 0;
+    adresaciManager.wyczyscWektor();
 }
 void KsiazkaAdresowa::menuGlowne(){
     char wybor;
@@ -48,8 +56,9 @@ void KsiazkaAdresowa::menuGlowne(){
         else
         {
             wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-            
-
+            pobierzIdOstatniegoAdresata();
+            //cout << "id ostatniego adresata:" << idOstatniegoAdresata << endl;
+            system("pause");
             wybor = Menu::wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -77,8 +86,7 @@ void KsiazkaAdresowa::menuGlowne(){
                 //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
             case '8':
-                //idZalogowanegoUzytkownika = 0;
-                //adresaci.clear();
+                wyloguj();
                 break;
             }
         }
