@@ -1,7 +1,25 @@
 #include "AdresaciManager.h"
 #include "MetodyPomocnicze.h"
+void AdresaciManager::wyswietlWszystkichAdresatow() {
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (vector <Adresat> ::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        {
+            (*itr).wyswietlDaneAdresata();
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
 void AdresaciManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);    
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 int AdresaciManager::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata) {
     Adresat adresat;

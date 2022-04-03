@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#include <iostream>
 using namespace std;
 
 class Adresat
@@ -31,6 +31,7 @@ public:
     void ustawEmail(string nowyEmail) { email = nowyEmail; }
     void ustawAdres(string nowyAdres) { adres = nowyAdres; }
 
+    void wyswietlDaneAdresata();
 
 };
 
