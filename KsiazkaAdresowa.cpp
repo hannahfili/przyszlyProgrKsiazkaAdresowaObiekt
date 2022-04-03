@@ -31,6 +31,9 @@ void KsiazkaAdresowa::wyloguj() {
     idZalogowanegoUzytkownika = 0;
     adresaciManager.wyczyscWektor();
 }
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
+    adresaciManager.wyswietlWszystkichAdresatow();
+}
 void KsiazkaAdresowa::menuGlowne(){
     char wybor;
     while (true)
@@ -74,7 +77,7 @@ void KsiazkaAdresowa::menuGlowne(){
                 wyszukajAdresatowPoNazwisku(adresaci);
                 break;*/
             case '4':
-                //wyswietlWszystkichAdresatow(adresaci);
+                wyswietlWszystkichAdresatow();
                 break;
             /*case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);

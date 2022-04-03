@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <iostream>
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 class AdresaciManager
@@ -9,6 +10,7 @@ class AdresaciManager
 	PlikZAdresatami plikZAdresatami;
 	Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 public:
+	void wyswietlWszystkichAdresatow();
 	int pobierzIdOstatniegoAdresata();
 	void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 	AdresaciManager(string nazwaPliku) : plikZAdresatami(nazwaPliku) {};

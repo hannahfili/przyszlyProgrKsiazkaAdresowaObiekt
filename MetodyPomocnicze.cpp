@@ -64,7 +64,19 @@ char MetodyPomocnicze::wczytajZnak()
 int MetodyPomocnicze::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
 {
     int pozycjaRozpoczeciaIdUzytkownika = daneJednegoAdresataOddzielonePionowymiKreskami.find_first_of('|') + 1;
-    int idUzytkownika = konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
+    int idUzytkownika = -1;
+
+    string kawalek = "";
+
+    for (int i = pozycjaRozpoczeciaIdUzytkownika; i < daneJednegoAdresataOddzielonePionowymiKreskami.size(); i++) {
+        if (daneJednegoAdresataOddzielonePionowymiKreskami[i] != '|') {
+            kawalek += daneJednegoAdresataOddzielonePionowymiKreskami[i];
+        }
+        else {
+            idUzytkownika= atoi(kawalek.c_str());
+            break;
+        }
+    }
 
     return idUzytkownika;
 }
