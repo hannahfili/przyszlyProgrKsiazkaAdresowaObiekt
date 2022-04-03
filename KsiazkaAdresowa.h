@@ -23,6 +23,8 @@ public:
 	void dodajAdresata();
 	void wypiszWszystkichUzytkownikow();
 	void menuGlowne();
+	void wyloguj();
+	void pobierzIdOstatniegoAdresata();
 	void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 	KsiazkaAdresowa(string nazwaPlikuUzytkownicy, string nazwaPlikuAdresaci) :
 		uzytkownikManager(nazwaPlikuUzytkownicy),

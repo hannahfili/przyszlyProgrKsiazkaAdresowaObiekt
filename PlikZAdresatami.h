@@ -14,7 +14,8 @@ class PlikZAdresatami
 	const string nazwaPlikuZAdresatami;
 public:
 	PlikZAdresatami(string nazwa) : nazwaPlikuZAdresatami(nazwa) {};
-	int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika, vector<Adresat> &adresaci);
+	vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+	int pobierzIdOstatniegoAdresata();
 	void dopiszAdresataDoPliku(Adresat adresat);
 };
 
