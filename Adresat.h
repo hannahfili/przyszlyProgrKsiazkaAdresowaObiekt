@@ -5,13 +5,13 @@ using namespace std;
 
 class Adresat
 {
-    int id = 0;
-    int idUzytkownika = 0;
-    string imie = "";
-    string nazwisko = "";
-    string numerTelefonu = "";
-    string email = "";
-    string adres = "";
+    int id;
+    int idUzytkownika;
+    string imie;
+    string nazwisko;
+    string numerTelefonu;
+    string email;
+    string adres;
 public:
     int pobierzIdAdresata() { return id; }
     int pobierzIdUzytkownika() { return idUzytkownika; }
