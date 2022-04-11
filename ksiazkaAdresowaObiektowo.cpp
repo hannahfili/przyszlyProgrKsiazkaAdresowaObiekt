@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "KsiazkaAdresowa.h"
+#include "AdresaciManager.h"
+#include "PlikZAdresatami.h"
 #include <windows.h>
 
 using namespace std;
@@ -14,6 +16,11 @@ int main()
     string nazwaAdresy = "Adresaci.txt";
     KsiazkaAdresowa ksiazkaAdresowa(nazwaUzytkownicy, nazwaAdresy);
     ksiazkaAdresowa.menuGlowne();
+    /*Adresat a(12, 18, "Alicja");
+    PlikZAdresatami plik("Adresaci.txt");
+    plik.zaktualizujDaneWybranegoAdresata(a);
+    cout << "done";*/
+
 }
 
  

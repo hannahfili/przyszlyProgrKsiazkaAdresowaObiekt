@@ -22,9 +22,10 @@ public:
 	static int konwersjaStringNaInt(string liczba);
 	static string pobierzLiczbe(string tekst, int pozycjaZnaku);
 	static Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-	static int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 	static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 	static string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
-	static bool czyPlikJestPusty(fstream& plikTekstowy);
+	static int podajIdWybranegoAdresata();
+	static int wczytajLiczbeCalkowita();
+	static void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 };
 

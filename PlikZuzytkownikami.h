@@ -6,17 +6,16 @@
 #include <sstream>
 #include <iostream>
 #include "Uzytkownik.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZuzytkownikami
+class PlikZuzytkownikami : public PlikTekstowy
 {
-	const string nazwaPlikuZUzytkownikami;
-
 	Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 	
 public:
-	PlikZuzytkownikami(string nazwa) : nazwaPlikuZUzytkownikami(nazwa) {}
+	PlikZuzytkownikami(string nazwa) : PlikTekstowy(nazwa) {};
 	void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
 	void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>& uzytkownicy);
 	string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
