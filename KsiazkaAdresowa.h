@@ -14,25 +14,34 @@ using namespace std;
 class KsiazkaAdresowa
 {
 	UzytkownikManager uzytkownikManager;
-	AdresaciManager adresaciManager;
-	int idZalogowanegoUzytkownika;
+	AdresaciManager* adresaciManager;
+	const string NAZWA_PLIKU_Z_ADRESATAMI;
 	int idOstatniegoAdresata;
+	bool czyUzytkownikJestZalogowany();
 public:
 	void rejestracjaUzytkownika();
 	void logowanieUzytkownika();
 	void dodajAdresata();
+	void edytujAdresata();
 	void wypiszWszystkichUzytkownikow();
 	void menuGlowne();
 	void wyloguj();
 	void pobierzIdOstatniegoAdresata();
-	void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 	void zmianaHaslaZalogowanegoUzytkownika();
 	void wyswietlWszystkichAdresatow();
+	void usunAdresata();
+	void wyszukajAdresatowPoImieniu();
+	void wyszukajAdresatowPoNazwisku();
+	
 	KsiazkaAdresowa(string nazwaPlikuUzytkownicy, string nazwaPlikuAdresaci) :
 		uzytkownikManager(nazwaPlikuUzytkownicy),
-		adresaciManager(nazwaPlikuAdresaci),
-		idZalogowanegoUzytkownika(0) {
-		uzytkownikManager.wczytajUzytkownikowZPliku();
-};
+		NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuAdresaci)
+	{
+		adresaciManager = NULL;
+	};
+	~KsiazkaAdresowa() {
+		delete adresaciManager;
+		adresaciManager = NULL;
+	}
 };
 
